@@ -1,0 +1,244 @@
+.burger {
+    display: none;
+}
+
+.header-logo {
+    height: auto;
+    min-width: 8rem;
+}
+
+.nav-container {
+    display: block;
+    .header__firstNav {
+        border-bottom: #fff solid 2px;
+        display: flex;
+        padding: 1.5em 4em;
+        .firstNav-RS {
+            display: flex;
+            a {
+                //pourquoi ils n'apparaissent pas??
+                padding-right: 1rem;
+                width: 3.5rem;
+            }
+        }
+        .header__firstNav-item {
+            a {
+                font-size: 2em;
+            }
+            img {
+                display: none;
+            }
+        }
+    }
+    .main-nav {
+        display: block;
+        justify-content: space-between;
+        .main-navitem {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 0.5em;
+            padding: 0.7 4em;
+            li {
+                display: inline-block;
+                font-size: 2em;
+                padding: 0.7em;
+                text-transform: uppercase;
+                &:hover {
+                    background-color: rgba($brown, $alpha: 0.7);
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+}
+
+//reste a faire apparaitre la main nav
+/*=========================
+SECTION1
+=========================*/
+
+.section1 {
+    h2 {
+        font-size: 4em;
+    }
+    p {
+        font-size: 3em;
+    }
+}
+
+.owl-carousel {
+    .item-infos {
+        bottom: 25%;
+        margin: 1rem 1rem;
+    }
+    .btn-section1 {
+        bottom: 40px;
+        font-size: 1.5em;
+        margin-bottom: 25px;
+        padding: 0.6em;
+        right: 50px;
+    }
+}
+
+.owl-carousel {
+    .owl-dots {
+        left: 15%;
+        bottom: 3.6em;
+    }
+}
+
+/*=========================
+SECTION2
+=========================*/
+
+.section2 {
+    .section2-contents {
+        padding: 2em 3em;
+    }
+    .section2-item {
+        &:nth-of-type(3) {
+            display: block;
+        }
+    }
+    figure {
+        max-width: 250px;
+        .section2-itembox {
+            img {
+                width: 250px;
+            }
+            p {
+                bottom: 20px;
+                color: #fff;
+                font-size: 1.3em;
+                right: 10px;
+            }
+        }
+        figcaption {
+            font-size: 1.4em;
+        }
+    }
+}
+
+/*=========================
+SECTION3
+=========================*/
+
+.section3 {
+    h3 {
+        padding-top: 3em;
+    }
+    .section3-contents {
+        img {
+            padding: 1em;
+        }
+    }
+}
+
+/*=========================
+SECTION4
+=========================*/
+
+.section4 {
+    .section4-left,
+    .section4-right {
+        .btn {
+            border: #fff solid 2px;
+        }
+    }
+    .section4-right {
+        p {
+            font-size: 1.8em;
+        }
+    }
+}
+
+/*=========================
+SECTION5
+=========================*/
+
+.section5 {
+    .section5-item {
+        .section5-img {
+            height: 200px;
+            width: 200px;
+        }
+        .section5-RS {
+            display: inline-block; //margin: 0;
+            height: auto;
+            margin-top: 1em;
+            width: 1.3em;
+        }
+    }
+}
+
+/*=========================
+FOOTER
+=========================*/
+
+.footer-logoRS {
+    border-bottom: 0;
+    flex-direction: row;
+    a {
+        display: block;
+    }
+    img {
+        max-height: 150px;
+        width: 120px;
+    }
+    .footer-RS {
+        flex-direction: column;
+        img {
+            padding-top: 0.7em;
+            width: 70px;
+        }
+    }
+}
+
+.footer-menumentions,
+.footer-newslettrer,
+.footer-logoRS {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 33.33%;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    .footer-newslettrer {
+        flex-basis: 33.33%;
+        flex-direction: column;
+        &:nth-of-type(2) {
+            border: 0;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+        .btn {
+            align-self: center;
+            display: inline-block;
+            width: 50%;
+        }
+    }
+    .footer-menumentions {
+        flex-direction: column;
+        .footer-menu {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            a {
+                padding-bottom: 2em;
+            }
+        }
+        .footer-mention {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            a {
+                border-bottom: 0;
+                text-align: right;
+                padding: 2em 0 0.5em;
+            }
+        }
+    }
+}

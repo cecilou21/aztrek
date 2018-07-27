@@ -1,0 +1,2 @@
+RewriteEngine on
+ErrorDocument 404 /dcprox/php/ecolidaire/404.php
