@@ -2,7 +2,7 @@
 
 require_once '../../../model/database.php';
 
-$list_activites = getAllEntities("activite");
+$list_sejours = getAllEntities("sejour");
 
 require_once '../../layout/header.php'; ?>
 
@@ -54,19 +54,33 @@ require_once '../../layout/header.php'; ?>
     </div>
     
     
-    <!-- Dois je mettre la catégorie ici-->
+    
     
     <!-- Mettre la destination avant l'activité-->
     
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Destination</label>
+        <div class="col-sm-8">
+            <select name="sejour_id" class="form-control">
+                <?php foreach ($list_sejours as $sejour) : ?>
+                <option value="<?php echo $sejour["id"]; ?>">
+                        <?php echo $sejour["libelle"]; ?>
+                </option>
+
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
     
+    <!-- Dois je mettre la catégorie ici -->
     
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Activité</label>
         <div class="col-sm-8">
-            <select name="activite_id" class="form-control">
-                <?php foreach ($list_activites as $activite) : ?>
-                <option value="<?php echo $activite["id"]; ?>">
-                        <?php echo $activite["libelle"]; ?>
+            <select name="sejour_id" class="form-control">
+                <?php foreach ($list_sejours as $sejour) : ?>
+                <option value="<?php echo $sejour["id"]; ?>">
+                        <?php echo $sejour["libelle"]; ?>
                 </option>
 
                 <?php endforeach; ?>

@@ -6,6 +6,7 @@ $id = $_GET["id"];
 $sejour = getOneEntity("sejour", $id);
 
 $list_activites = getAllEntities("activite");
+$list_destinations = getAllEntities("destination");
 
 require_once '../../layout/header.php'; ?>
 
@@ -22,7 +23,7 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Image</label>
         <div class="col-sm-1">
-            <img src="../../../uploads/<?php echo$sejour['image']; ?>" class="img-responsive img-thumbnail">
+            <img src="../../../images/Photos/<?php echo $sejour['image']; ?>" class="img-responsive img-thumbnail">
         </div>
         <div class="col-sm-7">
             <input type="file" name="image" accept="images/*" class="form-control">
@@ -60,9 +61,22 @@ require_once '../../layout/header.php'; ?>
     </div>
     
     <!-- mettre la meme div qu'en dessous pour la destination -->
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Destination</label>
+        <div class="col-sm-8">
+            <select name="destination" class="form-control">
+                <?php foreach ($list_destinations as $destination) : ?>
+                    <?php $selected = ($destination["id"] == $sejour["destination_id"]) ? "selected" : ""; ?>
+                <option value="<?php echo $destination["id"]; ?>" <?php echo $selected; ?>>
+                        <?php echo $destination["libelle"]; ?>
+                </option>
+
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
     
-    
-    <!-- Database ko car activite_id n'est pas dans la table projet???????????????? -->
+    <!-- Database ko car activite_id n'est pas dans la table sejour???????????????? -->
     
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Activité</label>

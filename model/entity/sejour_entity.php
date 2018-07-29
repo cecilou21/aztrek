@@ -9,19 +9,10 @@ function getAllSejours(int $limit = 999): array {
     global $connexion;
     $query = "SELECT 
                 sejour.*,
-                DATE_FORMAT(projet.date_debut,'%d/%m/%Y') AS date_debut_format,
-                REPLACE(FORMAT(projet.budget, 'currency', 'de_DE'), '.', ' ') AS budget_format,
-                COUNT(participation.id) AS nb_participants,
-                categorie.libelle AS categorie,
-                IFNULL(SUM(participation.montant) , 0) AS montant_participation,
-                AVG(notation.note) AS note_moyenne
-            FROM projet
-            INNER JOIN categorie ON categorie.id = projet.categorie_id
-            LEFT JOIN participation ON participation.projet_id = projet.id
-            LEFT JOIN notation ON notation.projet_id = projet.id
-            GROUP BY projet.id
-            ORDER BY projet.date_debut DESC
-            LIMIT :limit;";
+                DATE_FORMAT(sejour.date_creation,'%d/%m/%Y') AS date_creation_format   
+            FROM sejour
+            INNER JOIN destination ON sejour.destination_id = destination.id
+            ORDER BY sejour.date_creation DESC;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":limit", $limit);
@@ -29,21 +20,15 @@ function getAllSejours(int $limit = 999): array {
     return $stmt->fetchAll();
 }
 
-function getProject(int $id): array {
+function getSejour(int $id): array {
     global $connexion;
     $query = "SELECT 
-                projet.*,
-                DATE_FORMAT(projet.date_debut,'%d/%m/%Y') AS date_debut_format,
-                REPLACE(FORMAT(projet.budget, 'currency', 'de_DE'), '.', ' ') AS budget_format,
-                COUNT(participation.id) AS nb_participants,
-                categorie.libelle AS categorie,
-                IFNULL(SUM(participation.montant) , 0) AS montant_participation,
-                AVG(notation.note) AS note_moyenne
-            FROM projet
-            INNER JOIN categorie ON categorie.id = projet.categorie_id
-            LEFT JOIN participation ON participation.projet_id = projet.id
-            LEFT JOIN notation ON notation.projet_id = projet.id
-            WHERE projet.id = :id;";
+                sejour.*,
+                DATE_FORMAT(sejour.date_creation,'%d/%m/%Y') AS date_creation_format,   
+            FROM sejour
+            INNER JOIN destination ON sejour.destination_id = destination.id
+            ORDER BY sejour.date_creation DESC
+            WHERE sejour.id = :id;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
@@ -51,7 +36,7 @@ function getProject(int $id): array {
     return $stmt->fetch();
 }
 
-function insertProjet(string $titre, string $image, string $date_debut, string $date_fin, float $budget, string $description, int $categorie_id): int {
+function insertSejour(string $titre, string $image, string $date_debut, string $date_fin, float $budget, string $description, int $categorie_id): int {
     /* @var $connexion PDO */
     global $connexion;
     
