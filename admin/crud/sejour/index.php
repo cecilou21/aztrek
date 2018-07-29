@@ -1,12 +1,12 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_projets = getAllProjects();
+$list_sejours = getAllSejours();
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des projets</h1>
+<h1>Gestion des Séjours</h1>
 
 <a href="insert_form.php" class="btn btn-primary">Ajouter</a>
 
@@ -17,29 +17,31 @@ require_once '../../layout/header.php';
     <thead>
         <tr>
             <th>Titre</th>
-            <th>Date création</th>
-            <th>Catégories</th>
-            <th>Photo</th>
-            <th>Coût</th>
+            <th>Image</th>
+            
+            <th>Nombre de jours</th>
+            <th>Date de création</th>
+            
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($list_projets as $projet) : ?>
+        <?php foreach ($list_sejours as $sejour) : ?>
             <tr>
-                <td><?php echo $projet["titre"]; ?></td>
-                <td><?php echo $projet["date_debut_format"]; ?></td>
-                <td><?php echo $projet["categorie"]; ?></td>
-                <td><img src="<?php echo SITE_URL ."/uploads/" . $projet["image"]; ?>" alt="" class="img-thumbnail"></td>
-                <td><?php echo $projet["budget_format"]; ?> €</td>
+                <td><?php echo $sejour["titre"]; ?></td>
+                <td><img src="<?php echo SITE_URL ."/uploads/" . $sejour["image"]; ?>" alt="" class="img-thumbnail"></td>
+       
+                <td><?php echo $sejour["nb_jours"]; ?></td>
+                <td><?php echo $sejour["date_creation"]; ?> €</td>
+               
                 <td class="col-actions">
                     <form action="delete_query.php" method="post" class="form-delete">
-                        <input type="hidden" name="id" value="<?php echo $projet["id"]; ?>">
+                        <input type="hidden" name="id" value="<?php echo $sejour["id"]; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </button>
                     </form>
-                    <a href="update_form.php?id=<?php echo $projet["id"]; ?>" class="btn btn-warning">
+                    <a href="update_form.php?id=<?php echo $sejour["id"]; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                     </a>
                 </td>

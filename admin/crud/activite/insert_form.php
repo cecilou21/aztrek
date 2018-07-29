@@ -1,7 +1,7 @@
 <?php
 require_once '../../layout/header.php'; ?>
 
-<h1>Ajouter une catégorie</h1>
+<h1>Ajouter une activite</h1>
 
 <form action="insert_query.php" method="post">
     <div class="form-group row">

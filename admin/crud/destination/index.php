@@ -1,12 +1,12 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_categories = getAllEntities("categorie");
+$list_destinations = getAllEntities("destination");
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des catégories</h1>
+<h1>Gestion des Destinations</h1>
 
 <a href="insert_form.php" class="btn btn-primary">Ajouter</a>
 
@@ -17,21 +17,24 @@ require_once '../../layout/header.php';
     <thead>
         <tr>
             <th>Libellé</th>
+           
+            <th>Image</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($list_categories as $categorie) : ?>
+        <?php foreach ($list_destinations as $destination) : ?>
             <tr>
-                <td><?php echo $categorie["libelle"]; ?></td>
+                <td><?php echo $destination["libelle"]; ?></td>
+                <td><img src="<?php echo SITE_URL ."/uploads/" . $destination["image"]; ?>" alt="" class="img-thumbnail"></td>
                 <td class="col-actions">
                     <form action="delete_query.php" method="post" class="form-delete">
-                        <input type="hidden" name="id" value="<?php echo $categorie["id"]; ?>">
+                        <input type="hidden" name="id" value="<?php echo $destination["id"]; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </button>
                     </form>
-                    <a href="update_form.php?id=<?php echo $categorie["id"]; ?>" class="btn btn-warning">
+                    <a href="update_form.php?id=<?php echo $destination["id"]; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                     </a>
                 </td>

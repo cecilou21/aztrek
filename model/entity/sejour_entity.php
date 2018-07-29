@@ -5,10 +5,10 @@
  */
 
 
-function getAllProjects(int $limit = 999): array {
+function getAllSejours(int $limit = 999): array {
     global $connexion;
     $query = "SELECT 
-                projet.*,
+                sejour.*,
                 DATE_FORMAT(projet.date_debut,'%d/%m/%Y') AS date_debut_format,
                 REPLACE(FORMAT(projet.budget, 'currency', 'de_DE'), '.', ' ') AS budget_format,
                 COUNT(participation.id) AS nb_participants,

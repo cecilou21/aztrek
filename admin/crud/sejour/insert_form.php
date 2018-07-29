@@ -2,11 +2,11 @@
 
 require_once '../../../model/database.php';
 
-$list_categories = getAllEntities("categorie");
+$list_activites = getAllEntities("activite");
 
 require_once '../../layout/header.php'; ?>
 
-<h1>Ajouter un projet</h1>
+<h1>Ajouter un séjour</h1>
 <hr>
 
 <form action="insert_query.php" method="post" enctype="multipart/form-data">
@@ -23,36 +23,50 @@ require_once '../../layout/header.php'; ?>
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de début</label>
+        <label class="col-sm-2 col-form-label">Description</label>
         <div class="col-sm-8">
-            <input type="date" name="date_debut" class="form-control">
+            <textarea name="description"  class="form-control"></textarea>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nombre de jours</label>
+        <div class="col-sm-8">
+            <input type="number" name="nb_jours" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de fin</label>
+        <label class="col-sm-2 col-form-label">Date de création</label>
         <div class="col-sm-8">
             <input type="date" name="date_fin" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Budget</label>
+        <label class="col-sm-2 col-form-label">Question</label>
         <div class="col-sm-8">
-            <input type="number" name="budget" class="form-control">
+            <textarea name="question"  class="form-control"></textarea>
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Description</label>
+        <label class="col-sm-2 col-form-label">Réponse</label>
         <div class="col-sm-8">
-            <textarea name="description"  class="form-control"></textarea>
+            <textarea name="reponse"  class="form-control"></textarea>
         </div>
     </div>
+    
+    
+    <!-- Dois je mettre la catégorie ici-->
+    
+    <!-- Mettre la destination avant l'activité-->
+    
+    
+    
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Catégorie</label>
+        <label class="col-sm-2 col-form-label">Activité</label>
         <div class="col-sm-8">
-            <select name="categorie_id" class="form-control">
-                <?php foreach ($list_categories as $categorie) : ?>
-                <option value="<?php echo $categorie["id"]; ?>">
-                        <?php echo $categorie["libelle"]; ?>
+            <select name="activite_id" class="form-control">
+                <?php foreach ($list_activites as $activite) : ?>
+                <option value="<?php echo $activite["id"]; ?>">
+                        <?php echo $activite["libelle"]; ?>
                 </option>
 
                 <?php endforeach; ?>

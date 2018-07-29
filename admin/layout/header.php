@@ -22,7 +22,7 @@ require_once __DIR__ . '/../../config/parameters.php';
 
     <body>
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?php echo SITE_ADMIN; ?>">Ecolidaire - Admin</a>
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?php echo SITE_ADMIN; ?>">Aztrek - Admin</a>
             <ul class="navbar-nav flex-row px-3">
                 <li class="nav-item text-nowrap">
                     <a class="nav-link" href="<?php echo SITE_URL; ?>index.php"><i class="fa fa-external-link" target=_blank"></i> Front   </a>
@@ -40,8 +40,8 @@ require_once __DIR__ . '/../../config/parameters.php';
                         <ul class="nav flex-column">
                             
                             <?php display_nav_item(SITE_ADMIN, " Dashboard", "fa-home", true); ?>
-                            <?php display_nav_item(SITE_ADMIN . "crud/categories/", " Catégories", "fa-tags"); ?>
-                            <?php display_nav_item(SITE_ADMIN . "crud/projets/", "Projets", "fa-briefcase"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/sejour/", " Séjours", "fa-tags"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/activite/", "Activités", "fa-briefcase"); ?>
                             
                         </ul>
 

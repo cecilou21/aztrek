@@ -5,7 +5,8 @@ $(document).ready(function(){
     
     //Confirmation sur suppression
     $('.form-delete').submit(function(event){
-        var reponse = confirm('Etes-vous sûr?');
+        
+        var reponse = confirm('Etes-vous sûr de vouloir supprimer?');
         if (!reponse) {
             event.preventDefault();
             

@@ -6,14 +6,9 @@ $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $email = $_POST["email"];
 $password = $_POST["password"];
+$telephone = $_POST["telephone"];
 
 
-// Upload de l'image
-$photo = $_FILES["photo"]["name"];
-$tmp = $_FILES["photo"]["tmp_name"];
-
-move_uploaded_file($tmp, "../uploads/" . $photo);
-
-insertUtilisateur($nom, $prenom, $email, $password, $photo);
+insertUtilisateur($nom, $prenom, $email, $password, $telephone);
 
 header("location: login.php");

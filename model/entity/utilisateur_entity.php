@@ -17,17 +17,17 @@ function getOneUtilisateurByEmailPassword(string $email, string $password) {
     return $stmt->fetch();
 }
 
-function insertUtilisateur(string $nom, string $prenom, string $email, string $mot_de_passe, string $photo): int {
+function insertUtilisateur(string $nom, string $prenom, string $email, string $mot_de_passe, string $telephone): int {
     global $connexion;
     
-    $query = "INSERT INTO utilisateur (nom, prenom, mail, password, photo, admin) VALUES (:nom, :prenom, :email, :mot_de_passe, :photo, 0)";
+    $query = "INSERT INTO utilisateur (nom, prenom, mail, password, telephone, admin) VALUES (:nom, :prenom, :email, :mot_de_passe, :telephone, 0)";
         
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":nom", $nom);
     $stmt->bindParam(":prenom", $prenom);
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":mot_de_passe", $mot_de_passe);
-    $stmt->bindParam(":photo", $photo);
+    $stmt->bindParam(":telephone", $telephone);
     $stmt->execute();
     
     
