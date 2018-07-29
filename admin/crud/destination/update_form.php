@@ -8,7 +8,7 @@ require_once '../../layout/header.php'; ?>
 <h1>Modifier une activité</h1>
 <hr>
 
-<form action="update_query.php" method="post">
+<form action="update_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Libellé</label>
         <div class="col-sm-8">
