@@ -40,8 +40,10 @@ require_once __DIR__ . '/../../config/parameters.php';
                         <ul class="nav flex-column">
                             
                             <?php display_nav_item(SITE_ADMIN, " Dashboard", "fa-home", true); ?>
-                            <?php display_nav_item(SITE_ADMIN . "crud/sejour/", " Séjours", "fa-tags"); ?>
-                            <?php display_nav_item(SITE_ADMIN . "crud/activite/", "Activités", "fa-briefcase"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/sejour/", " Séjours", "fa-compass"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/activite/", "Activités", "fa-bicycle"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/destination/", "Destinations", "fa-globe"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/reservation/", "Reservations", "fa-dollar"); ?>
                             
                         </ul>
 
