@@ -6,3 +6,4 @@ admin/node_modules/
 uploads/
 config/parameters.php
 .sass-cache/
+.DS_Store
