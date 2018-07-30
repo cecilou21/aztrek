@@ -170,7 +170,8 @@ header {
   position: fixed;
   text-align: center;
   width: 100%;
-  z-index: 2; }
+  z-index: 2;
+  top: 0; }
   header .header-inner {
     display: flex;
     justify-content: space-between;
@@ -482,6 +483,9 @@ footer {
 
 .action img {
   height: 100%; }
+
+.action_title {
+  margin-top: 200px; }
 
 .action .overlay {
   position: absolute;

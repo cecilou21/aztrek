@@ -224,11 +224,14 @@ header {
     text-align: center;
     width: 100%;
     z-index: 2;
+    top: 0;
     .header-inner {
         display: flex;
         justify-content: space-between;
         padding: 20px 0 0;
+        
     }
+    
 }
 
 .header-logo {
@@ -633,6 +636,10 @@ footer {
 
 .action img {
     height: 100%;
+}
+
+.action_title {
+    margin-top: 200px;
 }
 
 .action .overlay {
