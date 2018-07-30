@@ -29,7 +29,7 @@ require_once '../../layout/header.php';
         <?php foreach ($list_sejours as $sejour) : ?>
             <tr>
                 <td><?php echo $sejour["titre"]; ?></td>
-                <td><img src="<?php echo SITE_URL ."/images/Photos/" . $sejour["image"]; ?>" alt="" class="img-thumbnail"></td>
+                <td><img src="<?php echo SITE_URL ."/uploads/" . $sejour["image"]; ?>" alt="" class="img-thumbnail"></td>
        
                 <td><?php echo $sejour["nb_jours"]; ?></td>
                 <td><?php echo $sejour["date_creation_format"]; ?></td>

@@ -1,13 +1,13 @@
 <?php
-require_once '../../../model/database.php';
-require_once '../../../lib/functions.php';
+require_once '../../../../model/database.php';
+require_once '../../../../lib/functions.php';
 
 $id = $_GET["id"];
 $depart = getOneEntity("depart", $id);
 
 $list_departs = getAllEntities("activite");
 
-require_once '../../layout/header.php'; ?>
+require_once '../../../../layout/header.php'; ?>
 
 <h1>Modifier un départ</h1>
 <hr>
@@ -39,4 +39,4 @@ require_once '../../layout/header.php'; ?>
     </button>
     
 </form>
-<?php require_once '../../layout/footer.php'; ?>
+<?php require_once '../../../layout/footer.php'; ?>

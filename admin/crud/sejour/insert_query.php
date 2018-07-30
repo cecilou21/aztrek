@@ -17,7 +17,7 @@ $activite_id = $_POST["activite_id"];
 $image = $_FILES["image"]["name"];
 $tmp = $_FILES["image"]["tmp_name"];
 
-move_uploaded_file($tmp, "../../../images/Photos/" . $image);
+move_uploaded_file($tmp, "../../../uploads/" . $image);
 
 //enregistrement de la base de données
 insertSejour($titre, $image, $description, $nb_jours, $date_creation, $question, $reponse, $destination, $activite_id);

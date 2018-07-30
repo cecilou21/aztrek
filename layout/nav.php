@@ -49,7 +49,7 @@
         <nav class="main-nav">
           <ul class="main-navitem container">
             <li>
-              <a href="#">Les destinations</a>
+              <a href="destinations.php">Les destinations</a>
             </li>
             <li>
               <a href="#">les activités</a>

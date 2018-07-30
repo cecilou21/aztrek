@@ -1,4 +1,20 @@
 <?php
+function getAllDestinations(int $limit = 999): array {
+    global $connexion;
+    $query = "SELECT 
+                destination.libelle,  
+                destination.description,  
+                destination.image,  
+            FROM destination;";
+            
+    
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":libelle", $libelle);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":image", $image);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
 
 function insertDestination(string $libelle, string $image, string $description): int {
     /* @var $connexion PDO */

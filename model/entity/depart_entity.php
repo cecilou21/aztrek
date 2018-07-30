@@ -36,11 +36,13 @@ function getAllDepartBySejour(int $id): array {
     global $connexion;
     
     $query = "SELECT 
+                depart.id,
                 depart.date_depart,
                 depart.prix,
                 depart.places_totales
             FROM depart
             INNER JOIN sejour ON sejour.id = depart.sejour_id
+            WHERE sejour.id = :id
             ORDER BY depart.date_depart DESC;";
     
     $stmt = $connexion->prepare($query);

@@ -10,7 +10,7 @@ $description = $_POST["description"];
 $image = $_FILES["image"]["name"];
 $tmp = $_FILES["image"]["tmp_name"];
 
-move_uploaded_file($tmp, "../../../images/Photos/" . $image);
+move_uploaded_file($tmp, "../../../uploads/" . $image);
 
 insertDestination($libelle, $description, $image);
 

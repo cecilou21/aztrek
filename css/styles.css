@@ -314,7 +314,7 @@ SECTION2 NOUVEAUX TREKS
 SECTION3 ACTIVITé
 =========================*/
 .section3 {
-  background: url(../images/Photos/cactusnuit2.jpg) center center no-repeat;
+  background: url(../images/cactusnuit2.jpg) center center no-repeat;
   background-size: cover;
   text-align: center; }
   .section3 h3 {
@@ -468,6 +468,51 @@ footer {
       border-bottom: #006633 solid 1px;
       margin-right: 1.5em;
       padding-bottom: 0.3em; }
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+
+.action {
+  position: relative;
+  overflow: hidden;
+  height: 250px; }
+
+.action img {
+  height: 100%; }
+
+.action .overlay {
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  transition: 0.5s;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.75) 100%); }
+
+.action:hover .overlay {
+  bottom: 0; }
+
+.action .overlay .info {
+  padding: 0 10px; }
+
+.action .overlay .info h3 {
+  margin: 10px 0;
+  color: white; }
+
+.action .overlay .more-info {
+  background-color: #683C11;
+  color: white;
+  font-size: 0.8em;
+  display: flex; }
+
+.action .overlay .more-info .action-info {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 30px; }
+
+.action .overlay .more-info .action-info i.fa {
+  opacity: 0.5; }
 
 @media only screen and (min-width: 768px) {
   .burger .fa {

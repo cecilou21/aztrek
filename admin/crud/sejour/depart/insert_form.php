@@ -1,10 +1,10 @@
 <?php
 
-require_once '../../../model/database.php';
+require_once '../../../../model/database.php';
 
 $list_departs = getAllEntities("depart");
 
-require_once '../../layout/header.php'; ?>
+require_once '../../../../layout/header.php'; ?>
 
 <h1>Ajouter un départ</h1>
 <hr>
@@ -33,4 +33,4 @@ require_once '../../layout/header.php'; ?>
     </button>
     
 </form>
-<?php require_once '../../layout/footer.php'; ?>
+<?php require_once '../../../../layout/footer.php'; ?>

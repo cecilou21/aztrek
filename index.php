@@ -20,7 +20,7 @@ get_header("Accueil");
         </div>
         <div class="item-img">
           <a href="#">
-            <img src="images/Photos/villagesoleil2.jpg" alt="mexique" />
+            <img src="uploads/villagesoleil2.jpg" alt="mexique" />
           </a>
         </div>
       </article>
@@ -37,7 +37,7 @@ get_header("Accueil");
         </div>
         <div class="item-img">
           <a href="#">
-            <img src="images/Photos/montagnebrume2.jpg" alt="mexique" />
+            <img src="uploads/montagnebrume2.jpg" alt="mexique" />
           </a>
         </div>
       </article>
@@ -54,7 +54,7 @@ get_header("Accueil");
         </div>
         <div class="item-img">
           <a href="#">
-            <img src="images/Photos/rueflaque2.jpg" alt="salvador" />
+            <img src="uploads/rueflaque2.jpg" alt="salvador" />
           </a>
         </div>
       </article>
@@ -70,7 +70,7 @@ get_header("Accueil");
         </div>
         <div class="item-img">
           <a href="#">
-            <img src="images/Photos/desert2.jpg" alt="honduras" />
+            <img src="uploads/desert2.jpg" alt="honduras" />
           </a>
         </div>
       </article>
@@ -86,7 +86,7 @@ get_header("Accueil");
         </div>
         <div class="item-img">
           <a href="#">
-            <img src="images/Photos/femmerose2.jpg" alt="costa-rica" />
+            <img src="uploads/femmerose2.jpg" alt="costa-rica" />
           </a>
         </div>
       </article>
@@ -101,7 +101,7 @@ get_header("Accueil");
         <div class="section2-item">
           <figure>
             <div class="section2-itembox">
-              <img src="images/Photos/cactusbrume2.jpg" alt="brume">
+              <img src="uploads/cactusbrume2.jpg" alt="brume">
               <p>à partir de
                 <span>999€</span>
               </p>
@@ -124,7 +124,7 @@ get_header("Accueil");
         <div class="section2-item">
           <figure>
             <div class="section2-itembox">
-              <img src="images/Photos/randonne2.jpg" alt="randonnee">
+              <img src="uploads/randonne2.jpg" alt="randonnee">
               <p>à partir de
                 <span>1200€</span>
               </p>
@@ -147,7 +147,7 @@ get_header("Accueil");
         <div class="section2-item">
           <figure>
             <div class="section2-itembox">
-              <img src="images/Photos/velocamping2.jpg" alt="velo">
+              <img src="uploads/velocamping2.jpg" alt="velo">
               <p>à partir de
                 <span>1900€</span>
               </p>
@@ -200,7 +200,7 @@ get_header("Accueil");
 
     <section class="section4 container">
       <div class="section4-left">
-        <img src="images/Photos/volcan2.jpg" alt="volcan">
+        <img src="uploads/volcan2.jpg" alt="volcan">
         <a href="#" class="btn">Voir la destination</a>
       </div>
 
@@ -231,7 +231,7 @@ get_header("Accueil");
 
             <article class="section5-item">
               <a href="#">
-                <img src="images/Photos/volcanchateau2.jpg" alt="photovolcan" class="section5-img">
+                <img src="uploads/volcanchateau2.jpg" alt="photovolcan" class="section5-img">
               </a>
               <a href="#">
                 <img src="images/Pictos/instrek.png" alt="" class="section5-RS"> INSTREK</a>
@@ -239,7 +239,7 @@ get_header("Accueil");
 
             <article class="section5-item">
               <a href="#">
-                <img src="images/Photos/trekgroup2.jpg" alt="photorandonnée" class="section5-img">
+                <img src="uploads/trekgroup2.jpg" alt="photorandonnée" class="section5-img">
               </a>
               <a href="#">
                 <img src="images/Pictos/trinder.png" alt="" class="section5-RS"> TRINDER</a>
@@ -247,7 +247,7 @@ get_header("Accueil");
 
             <article class="section5-item">
               <a href="#">
-                <img src="images/Photos/lezard2.jpg" alt="lezard" class="section5-img">
+                <img src="uploads/lezard2.jpg" alt="lezard" class="section5-img">
               </a>
               <a href="#">
                 <img src="images/Pictos/facetrek.png" alt="" class="section5-RS"> FACETREK</a>
@@ -275,7 +275,7 @@ get_header("Accueil");
       </div>
 
       <aside class="section6-aside">
-        <img src="images/Photos/group2.jpg" alt="equipe">
+        <img src="uploads/group2.jpg" alt="equipe">
 
       </aside>
     </section>

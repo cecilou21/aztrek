@@ -25,7 +25,7 @@ require_once __DIR__ . '/../../config/parameters.php';
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?php echo SITE_ADMIN; ?>">Aztrek - Admin</a>
             <ul class="navbar-nav flex-row px-3">
                 <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="<?php echo SITE_URL; ?>index.php"><i class="fa fa-external-link" target=_blank"></i> Front   </a>
+                    <a class="nav-link" href="<?php echo SITE_URL; ?>index.php"><i class="fa fa-external-link" target="_blank"></i> Front   </a>
                 </li>
                 <li class="nav-item text-nowrap">
                     <a class="nav-link" href="<?php echo SITE_ADMIN; ?>logout.php"><i class="fa fa-sign-out"></i> Déconnexion   </a>

@@ -23,7 +23,7 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Image</label>
         <div class="col-sm-1">
-            <img src="../../../images/Photos/<?php echo $sejour['image']; ?>" class="img-responsive img-thumbnail">
+            <img src="../../../uploads/<?php echo $sejour['image']; ?>" class="img-responsive img-thumbnail">
         </div>
         <div class="col-sm-7">
             <input type="file" name="image" accept="images/*" class="form-control">
@@ -58,7 +58,7 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Destination</label>
         <div class="col-sm-8">
-            <select name="destination" class="form-control">
+            <select name="destination_id" class="form-control">
                 <?php foreach ($list_destinations as $destination) : ?>
                     <?php $selected = ($destination["id"] == $sejour["destination_id"]) ? "selected" : ""; ?>
                 <option value="<?php echo $destination["id"]; ?>" <?php echo $selected; ?>>

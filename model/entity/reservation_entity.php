@@ -1,50 +1,43 @@
 <?php
-/**
- * Retourne la liste des participations
- * @return array Liste des participations
- */
-function getAllParticipationsByProject(int $id): array {
+
+function getAllReservations(int $limit = 999): array {
+    global $connexion;
+    $query = "SELECT 
+                reservation.*,
+                DATE_FORMAT(projet.date_debut,'%d/%m/%Y') AS date_debut_format,
+                REPLACE(FORMAT(projet.budget, 'currency', 'de_DE'), '.', ' ') AS budget_format,
+                
+                
+                IFNULL(SUM(participation.montant) , 0) AS montant_participation,
+                
+            FROM reservation
+            INNER JOIN depart ON categorie.id = projet.categorie_id
+            LEFT JOIN participation ON participation.projet_id = projet.id
+            LEFT JOIN notation ON notation.projet_id = projet.id
+            GROUP BY projet.id
+            ORDER BY projet.date_debut DESC
+            LIMIT :limit;";
+    
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":limit", $limit);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+
+function updateReservation(string $utilisateur_id, string $nb_places) {
+    /* @var $connexion PDO */
     global $connexion;
     
-    
-    $query = "SELECT 
-                utilisateur.nom,
-                utilisateur.prenom,
-                utilisateur.photo,
-                participation.date_creation,
-                participation.montant,
-                participation.utilisateur_id
-            FROM participation
-            INNER JOIN utilisateur ON utilisateur.id = participation.utilisateur_id
-            WHERE participation.projet_id = :id
-            ORDER BY participation.date_creation DESC;";
+    $query = "UPDATE reservation SET
+               validation = NOT validation 
+               WHERE id = 2";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
+    $stmt->bindParam(":nb_places", $nb_places);
     $stmt->execute();
-    return $stmt->fetchAll();
+    
     
 }
-
-function getAllParticipationsByUtilisateur(int $id): array {
-    global $connexion;
-    
-    
-    $query = "SELECT 
-                    projet.titre,
-                    projet.image,
-                    participation.montant,
-                    participation.date_creation,
-                    participation.projet_id
-            FROM participation
-            INNER JOIN projet ON projet.id = participation.projet_id
-            WHERE participation.utilisateur_id = :id
-            ORDER BY participation.date_creation DESC;";
-    
-    $stmt = $connexion->prepare($query);
-    $stmt->bindParam(":id", $id);
-    $stmt->execute();
-    return $stmt->fetchAll();
-    
-}
-

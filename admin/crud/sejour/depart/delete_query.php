@@ -1,9 +1,9 @@
 <?php
-require_once '../../../security.php';
-require_once '../../../../model/database.php';
+require_once '../../../../security.php';
+require_once '../../../../../model/database.php';
 
 $id = $_POST["id"];
 
 deleteEntity("depart", $id);
 
-header("Location: index.php");
+header("Location: ../index.php");

@@ -57,7 +57,7 @@ function insertSejour(string $titre, string $image, string $description, int $nb
     
 }
 
-function updateSejour(int $id, string $titre, string $image, string $description, int $nb_jours, string $date_creation, string $question, string $reponse, string $destination_id, string $activite_id): int {
+function updateSejour(int $id, string $titre, string $image, string $description, int $nb_jours, string $question, string $reponse, string $destination_id): int {
     /* @var $connexion PDO */
     global $connexion;
     
@@ -66,11 +66,9 @@ function updateSejour(int $id, string $titre, string $image, string $description
             image = :image,
             description = :description,
             nb_jours = :nb_jours,
-            date_creation = :date_creation,
             question = :question,
             reponse = :reponse,
-            destination_id = :destination_id,
-            activite_id = :activite_id
+            destination_id = :destination_id
         WHERE id = :id
         ";
     
@@ -81,11 +79,9 @@ function updateSejour(int $id, string $titre, string $image, string $description
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":image", $image);
     $stmt->bindParam(":nb_jours", $nb_jours);
-    $stmt->bindParam(":date_creation", $date_creation);
     $stmt->bindParam(":question", $question);
     $stmt->bindParam(":reponse", $reponse);
     $stmt->bindParam(":destination_id", $destination_id);
-    $stmt->bindParam(":activite_id", $activite_id);
     $stmt->execute();
     
     return $connexion->lastInsertId();

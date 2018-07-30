@@ -34,7 +34,7 @@ $utilisateur = current_user();
 
       <div class="header-logo">
         <div class="logo">
-          <a href="index.html" title="Accueil">
+          <a href="index.php" title="Accueil">
             <img src="images/Logos/logoPblanc.png" alt="Logo">
           </a>
         </div>

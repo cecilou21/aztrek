@@ -14,7 +14,7 @@ if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
     $image = $_FILES["image"]["name"];
     $tmp = $_FILES["image"]["tmp_name"];
     
-    move_uploaded_file($tmp, "../../../images/Photos/" . $image);
+    move_uploaded_file($tmp, "../../../uploads/" . $image);
 }
 
 updateDestination($id, $libelle, $description, $image);
