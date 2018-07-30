@@ -13,7 +13,7 @@ require_once '../../layout/header.php'; ?>
 <h1>Modifier un séjour</h1>
 <hr>
 
-<form action="update_query.php" method="post" enctype="multipart/form-data">
+<form action="update_query.php" method="post" enctype="multipart/form-data" class="clearfix mb-4">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Titre</label>
         <div class="col-sm-8">
@@ -39,12 +39,6 @@ require_once '../../layout/header.php'; ?>
         <label class="col-sm-2 col-form-label">Nombre de jours</label>
         <div class="col-sm-8">
             <input type="number" name="nb_jours" value="<?php  echo $sejour["nb_jours"]; ?>"class="form-control">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de création</label>
-        <div class="col-sm-8">
-            <input type="date" name="date_creation" value="<?php  echo $sejour["date_creation"]; ?>" class="form-control">
         </div>
     </div>
     <div class="form-group row">
@@ -99,4 +93,7 @@ require_once '../../layout/header.php'; ?>
     </button>
     
 </form>
+
+<?php require_once 'depart/index.php'; ?>
+
 <?php require_once '../../layout/footer.php'; ?>

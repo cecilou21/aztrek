@@ -61,10 +61,10 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Destination</label>
         <div class="col-sm-8">
-            <select name="sejour_id" class="form-control">
-                <?php foreach ($list_sejours as $sejour) : ?>
-                <option value="<?php echo $sejour["id"]; ?>">
-                        <?php echo $sejour["libelle"]; ?>
+            <select name="destination" class="form-control">
+                <?php foreach ($list_destinations as $destination) : ?>
+                <option value="<?php echo $destination["id"]; ?>">
+                        <?php echo $destination["libelle"]; ?>
                 </option>
 
                 <?php endforeach; ?>
@@ -77,10 +77,10 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Activité</label>
         <div class="col-sm-8">
-            <select name="sejour_id" class="form-control">
-                <?php foreach ($list_sejours as $sejour) : ?>
-                <option value="<?php echo $sejour["id"]; ?>">
-                        <?php echo $sejour["libelle"]; ?>
+            <select name="activite" class="form-control">
+                <?php foreach ($list_activites as $activite) : ?>
+                <option value="<?php echo $activite["id"]; ?>">
+                        <?php echo $activite["libelle"]; ?>
                 </option>
 
                 <?php endforeach; ?>
@@ -93,4 +93,5 @@ require_once '../../layout/header.php'; ?>
     </button>
     
 </form>
+<?php require_once 'depart/index.php'; ?>
 <?php require_once '../../layout/footer.php'; ?>

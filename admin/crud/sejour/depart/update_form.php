@@ -3,81 +3,35 @@ require_once '../../../model/database.php';
 require_once '../../../lib/functions.php';
 
 $id = $_GET["id"];
-$sejour = getOneEntity("sejour", $id);
+$depart = getOneEntity("depart", $id);
 
-$list_activites = getAllEntities("activite");
+$list_departs = getAllEntities("activite");
 
 require_once '../../layout/header.php'; ?>
 
-<h1>Modifier un séjour</h1>
+<h1>Modifier un départ</h1>
 <hr>
 
 <form action="update_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Titre</label>
+        <label class="col-sm-2 col-form-label">Date de départ</label>
         <div class="col-sm-8">
-            <input type="text" name="titre" value="<?php  echo $sejour["titre"]; ?>" class="form-control" placeholder="Titre">
+            <input type="date" name="date_depart" class="form-control" placeholder="Date de départ">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Image</label>
-        <div class="col-sm-1">
-            <img src="../../../uploads/<?php echo$sejour['image']; ?>" class="img-responsive img-thumbnail">
-        </div>
-        <div class="col-sm-7">
-            <input type="file" name="image" accept="images/*" class="form-control">
+        <label class="col-sm-2 col-form-label">Prix</label>
+        <div class="col-sm-8">
+            <input type="number" name="prix" class="form-control" placeholder="Prix">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Description</label>
+        <label class="col-sm-2 col-form-label">Nombre de places</label>
         <div class="col-sm-8">
-            <textarea name="description" class="form-control"><?php echo $sejour["description"]; ?></textarea>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Nombre de jours</label>
-        <div class="col-sm-8">
-            <input type="number" name="nb_jours" value="<?php  echo $sejour["nb_jours"]; ?>"class="form-control">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de création</label>
-        <div class="col-sm-8">
-            <input type="date" name="date_creation" value="<?php  echo $sejour["date_creation"]; ?>" class="form-control">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Question</label>
-        <div class="col-sm-8">
-            <textarea name="question" class="form-control"><?php echo $sejour["question"]; ?></textarea>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Réponse</label>
-        <div class="col-sm-8">
-            <textarea name="reponse" class="form-control"><?php echo $sejour["reponse"]; ?></textarea>
+            <input type="number" name="places_totales" class="form-control" placeholder="Nombre de places">
         </div>
     </div>
     
-    <!-- mettre la meme div qu'en dessous pour la destination -->
-    
-    
-    <!-- Database ko car activite_id n'est pas dans la table projet???????????????? -->
-    
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Activité</label>
-        <div class="col-sm-8">
-            <select name="activite_id" class="form-control">
-                <?php foreach ($list_activites as $activite) : ?>
-                    <?php $selected = ($activite["id"] == $sejour["activite_id"]) ? "selected" : ""; ?>
-                <option value="<?php echo $activite["id"]; ?>" <?php echo $selected; ?>>
-                        <?php echo $activite["libelle"]; ?>
-                </option>
-
-                <?php endforeach; ?>
-            </select>
-        </div>
-    </div>
     <input type="hidden" name="id" value="<?php echo $id; ?>">
     <button type="submit" class="btn btn-success float-right">
         <i class="fa fa-save"></i>
