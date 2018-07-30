@@ -25,18 +25,16 @@ function getAllReservations(int $limit = 999): array {
 }
 
 
-function updateReservation(string $utilisateur_id, string $nb_places) {
+function updateReservation(string $id) {
     /* @var $connexion PDO */
     global $connexion;
     
     $query = "UPDATE reservation SET
                validation = NOT validation 
-               WHERE id = 2";
+               WHERE id = :id";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
-    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
-    $stmt->bindParam(":nb_places", $nb_places);
     $stmt->execute();
     
     

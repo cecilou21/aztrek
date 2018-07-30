@@ -34,15 +34,20 @@ require_once '../../layout/header.php';
                 <td><?php echo $reservation["nb_places"]; ?></td>
                 <td><?php echo $reservation["date_creation"]; ?></td>
                 <td>
-                    <?php if ($reservation["validation"]) : ?>
-                        <a href="update_query.php?id=<?php echo $reservation["id"]; ?>" class="btn btn-success">
-                            <i class="fa fa-check-circle"></i>
-                        </a>
-                    <?php else: ?>
-                        <a href="update_query.php?id=<?php echo $reservation["id"]; ?>" class="btn btn-danger">
-                            <i class="fa fa-times-circle"></i>
-                        </a>
-                    <?php endif; ?>
+                    <form action="update_query.php" method="post" class="form-validate">
+                        <input type="hidden" name="id" value="<?php echo $reservation["id"]; ?>">
+                        
+                        <?php if ($reservation["validation"]) : ?>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-check-circle"></i>
+                            </button>
+                        
+                        <?php else: ?>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+                        <?php endif; ?>
+                    </form>
                 </td>
 
 
