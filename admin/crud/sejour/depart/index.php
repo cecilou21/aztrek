@@ -1,12 +1,13 @@
 <?php
 require_once '../../../model/database.php';
 
+
 $list_departs = getAllDepartBySejour($id);
 ?>
 
 <h2>Gestion des Départs</h2>
 
-<a href="insert_form.php" class="btn btn-primary">Ajouter</a>
+<a href="depart/insert_form.php?sejour_id=<?php echo $id; ?>" class="btn btn-primary">Ajouter</a>
 
 <hr>
 
@@ -29,6 +30,7 @@ $list_departs = getAllDepartBySejour($id);
                 <td class="col-actions">
                     <form action="depart/delete_query.php" method="post" class="form-delete">
                         <input type="hidden" name="id" value="<?php echo $depart["id"]; ?>">
+                        <input type="hidden" name="sejour_id" value="<?php echo $depart["sejour_id"]; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </button>

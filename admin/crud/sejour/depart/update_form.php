@@ -7,7 +7,7 @@ $depart = getOneEntity("depart", $id);
 
 $list_departs = getAllEntities("activite");
 
-require_once '../../../../layout/header.php'; ?>
+require_once '../../../layout/header.php'; ?>
 
 <h1>Modifier un départ</h1>
 <hr>
@@ -16,19 +16,19 @@ require_once '../../../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Date de départ</label>
         <div class="col-sm-8">
-            <input type="date" name="date_depart" class="form-control" placeholder="Date de départ">
+            <input type="date" name="date_depart" value="<?php  echo $depart["date_depart"]; ?>" class="form-control" placeholder="Date de départ">
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Prix</label>
         <div class="col-sm-8">
-            <input type="number" name="prix" class="form-control" placeholder="Prix">
+            <input type="number" name="prix" value="<?php  echo $depart["prix"]; ?>" class="form-control" placeholder="Prix">
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nombre de places</label>
         <div class="col-sm-8">
-            <input type="number" name="places_totales" class="form-control" placeholder="Nombre de places">
+            <input type="number" name="places_totales" value="<?php  echo $depart["places_totales"]; ?>" class="form-control" placeholder="Nombre de places">
         </div>
     </div>
     

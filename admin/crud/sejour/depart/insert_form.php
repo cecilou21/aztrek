@@ -2,9 +2,10 @@
 
 require_once '../../../../model/database.php';
 
-$list_departs = getAllEntities("depart");
 
-require_once '../../../../layout/header.php'; ?>
+$sejour_id = $_GET["sejour_id"];
+
+require_once '../../../layout/header.php'; ?>
 
 <h1>Ajouter un départ</h1>
 <hr>
@@ -13,7 +14,7 @@ require_once '../../../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Date de départ</label>
         <div class="col-sm-8">
-            <input type="date" name="titre" class="form-control" placeholder="Titre">
+            <input type="date" name="date_depart" class="form-control" placeholder="Date de départ">
         </div>
     </div>
     <div class="form-group row">
@@ -27,10 +28,11 @@ require_once '../../../../layout/header.php'; ?>
         <div class="col-sm-8">
             <input type="number" name="places_totales"  class="form-control" placeholder="Nombre de places">
     </div>
+    <input type="hidden" name="sejour_id" value="<?php echo $sejour_id; ?>">
     <button type="submit" class="btn btn-success float-right">
         <i class="fa fa-save"></i>
         Enregistrer
     </button>
     
 </form>
-<?php require_once '../../../../layout/footer.php'; ?>
+<?php require_once '../../../layout/footer.php'; ?>
