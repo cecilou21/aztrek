@@ -42,7 +42,8 @@ function getAllDepartBySejour(int $id): array {
             depart.date_depart,
             depart.prix,
             depart.places_totales,
-            depart.places_totales - IFNULL(total_resa.nb_places, 0) AS places_restantes
+            depart.places_totales - IFNULL(total_resa.nb_places, 0) AS places_restantes,
+            depart.sejour_id
         FROM
             depart
                 INNER JOIN

@@ -7,4 +7,4 @@ $sejour_id = $_POST["sejour_id"];
 
 deleteEntity("depart", $id);
 
-header("Location: ../index.php");
+header("Location: ../update_form.php?id=".$sejour_id);

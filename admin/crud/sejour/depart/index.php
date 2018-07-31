@@ -31,8 +31,8 @@ $list_departs = getAllDepartBySejour($id);
                 <td><?php echo $depart["places_restantes"]; ?></td>
                 <td class="col-actions">
                     <form action="depart/delete_query.php" method="post" class="form-delete">
-                        <input type="hidden" name="id" value="<?php echo $depart["id"]; ?>">
-                        <input type="hidden" name="sejour_id" value="<?php echo $depart["sejour_id"]; ?>">
+                        <input type="hidden" name="id" value="<?php echo $depart['id']; ?>">
+                        <input type="hidden" name="sejour_id" value="<?php echo $depart['sejour_id']; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </button>
