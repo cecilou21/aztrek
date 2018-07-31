@@ -31,3 +31,5 @@ function updateActivite(int $id,string $libelle, string $image) {
 }
 
 
+
+

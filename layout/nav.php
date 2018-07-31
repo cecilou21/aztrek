@@ -52,7 +52,7 @@
               <a href="destinations.php">Les destinations</a>
             </li>
             <li>
-              <a href="#">les activités</a>
+              <a href="activites.php">les activités</a>
             </li>
             <li>
               <a href="#">la communauté</a>

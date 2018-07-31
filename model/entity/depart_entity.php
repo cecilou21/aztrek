@@ -41,10 +41,14 @@ function getAllDepartBySejour(int $id): array {
                 depart.id,
                 depart.date_depart,
                 depart.prix,
-                depart.places_totales
+                depart.places_totales,
+                depart.places_totales - IFNULL(SUM(reservation.nb_places), 0) AS places_restantes
             FROM depart
             INNER JOIN sejour ON sejour.id = depart.sejour_id
+            LEFT JOIN reservation ON reservation.depart_id = depart.id
             WHERE sejour.id = :id
+            AND (reservation.validation = 1 OR reservation.validation IS NULL)
+            GROUP BY depart.id
             ORDER BY depart.date_depart DESC;";
     
     $stmt = $connexion->prepare($query);

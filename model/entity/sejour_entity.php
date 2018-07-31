@@ -88,3 +88,25 @@ function updateSejour(int $id, string $titre, string $image, string $description
     
 }
 
+function getAllSejourByCategorie(int $id): array {
+    /* @var $connexion PDO */
+    global $connexion;
+    
+    $query = "SELECT 
+                sejour.id,
+                sejour.titre,
+                sejour.image,
+                sejour.description 
+            FROM sejour
+            INNER JOIN sejour_has_activite ON sejour.id = sejour_has_activite.sejour_id
+            WHERE activite_id = :id
+            GROUP BY sejour.id
+            ORDER BY sejour.date_creation DESC;";
+    
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    return $stmt->fetchAll();
+    
+}
+

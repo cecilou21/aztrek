@@ -18,6 +18,7 @@ $list_departs = getAllDepartBySejour($id);
             <th>Date</th>
             <th>Prix</th>
             <th>Nombre de places</th>
+            <th>Places restantes</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -27,6 +28,7 @@ $list_departs = getAllDepartBySejour($id);
                 <td><?php echo $depart["date_depart"]; ?></td>
                 <td><?php echo $depart["prix"]; ?></td>
                 <td><?php echo $depart["places_totales"]; ?></td>
+                <td><?php echo $depart["places_restantes"]; ?></td>
                 <td class="col-actions">
                     <form action="depart/delete_query.php" method="post" class="form-delete">
                         <input type="hidden" name="id" value="<?php echo $depart["id"]; ?>">

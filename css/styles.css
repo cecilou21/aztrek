@@ -479,7 +479,7 @@ footer {
 .action {
   position: relative;
   overflow: hidden;
-  height: 250px; }
+  height: 230px; }
 
 .action img {
   height: 100%; }
@@ -492,6 +492,7 @@ footer {
   bottom: -10px;
   width: 100%;
   transition: 0.5s;
+  text-align: center;
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.75) 100%); }
 
 .action:hover .overlay {
@@ -517,6 +518,12 @@ footer {
 
 .action .overlay .more-info .action-info i.fa {
   opacity: 0.5; }
+
+.activites {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
 
 @media only screen and (min-width: 768px) {
   .burger .fa {
