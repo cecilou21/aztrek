@@ -533,6 +533,12 @@ footer {
 
 .sejourbloc {
   display: flex; }
+  .sejourbloc img {
+    display: block;
+    max-width: 200px;
+    max-height: 350px;
+    height: auto;
+    width: auto; }
 
 .sejourinfo {
   display: block;
@@ -544,6 +550,9 @@ footer {
 
 .depart_table {
   margin-top: 5em; }
+
+.input_nb_places {
+  width: 11em; }
 
 @media only screen and (min-width: 768px) {
   .burger .fa {

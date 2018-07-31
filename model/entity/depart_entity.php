@@ -38,18 +38,27 @@ function getAllDepartBySejour(int $id): array {
     global $connexion;
     
     $query = "SELECT 
-                depart.id,
-                depart.date_depart,
-                depart.prix,
-                depart.places_totales,
-                depart.places_totales - IFNULL(SUM(reservation.nb_places), 0) AS places_restantes
-            FROM depart
-            INNER JOIN sejour ON sejour.id = depart.sejour_id
-            LEFT JOIN reservation ON reservation.depart_id = depart.id
-            WHERE sejour.id = :id
-            AND (reservation.validation = 1 OR reservation.validation IS NULL)
-            GROUP BY depart.id
-            ORDER BY depart.date_depart DESC;";
+            depart.id,
+            depart.date_depart,
+            depart.prix,
+            depart.places_totales,
+            depart.places_totales - IFNULL(total_resa.nb_places, 0) AS places_restantes
+        FROM
+            depart
+                INNER JOIN
+            sejour ON sejour.id = depart.sejour_id
+                LEFT JOIN
+
+            ( SELECT 
+                depart_id, SUM(reservation.nb_places) AS nb_places
+            FROM reservation
+            WHERE reservation.validation = 1
+            GROUP BY reservation.depart_id ) as total_resa 
+
+            ON total_resa.depart_id = depart.id
+        WHERE
+            sejour.id = :id
+        ORDER BY depart.date_depart DESC;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);

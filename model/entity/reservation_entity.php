@@ -25,6 +25,22 @@ function getAllReservations(int $limit = 999): array {
 }
 
 
+function insertReservation(int $depart_id, int $utilisateur_id, int $nb_places) {
+    /* @var $connexion PDO */
+    global $connexion;
+    
+    $query = "INSERT INTO reservation (depart_id, utilisateur_id, nb_places) VALUES (:depart_id, :utilisateur_id, :nb_places)";
+    
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":depart_id", $depart_id);
+    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
+    $stmt->bindParam(":nb_places", $nb_places);
+    $stmt->execute();
+    
+    
+}
+
+
 function updateReservation(string $id) {
     /* @var $connexion PDO */
     global $connexion;

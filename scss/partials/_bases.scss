@@ -700,6 +700,13 @@ footer {
 
 .sejourbloc {
     display: flex;
+    img {
+        display: block;
+        max-width: 200px;
+        max-height: 350px;
+        height: auto;
+        width: auto;
+    }
 }
 
 .sejourinfo {
@@ -717,3 +724,6 @@ footer {
     margin-top: 5em;
 }
 
+.input_nb_places {
+    width: 11em;
+}

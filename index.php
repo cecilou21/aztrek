@@ -1,9 +1,9 @@
 <?php
 require_once 'lib/functions.php';
 require_once 'model/database.php';
+require_once 'layout/header.php';
 
-
-get_header("Accueil");
+//get_header("Accueil");
 ?>
 
     <section class="section1 owl-carousel owl-theme">
