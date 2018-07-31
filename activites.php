@@ -19,11 +19,14 @@ get_header("Liste des activités");
             <?php include 'include/activite_inc.php'; ?>
         <?php endforeach; ?>
     </div>
-
+    
+</section>
+<section class="container list-sejour">
+    <div class="actions">
     <?php if (isset($list_sejours)) : ?>
         <?php foreach ($list_sejours as $sejour): ?>
-            <article>
-                <img src="uploads/<?php echo $sejour["image"]; ?>" alt="imagesejour">
+            <article class="action image-sejour">
+                <a href="sejour.php?id=<?php echo $sejour["id"]; ?>"><img src="uploads/<?php echo $sejour["image"]; ?>" alt="imagesejour"></a>
                 <div class="overlay">
                     <div class="info">
                         <h3><?php echo $sejour["titre"]; ?></h3>
@@ -33,7 +36,8 @@ get_header("Liste des activités");
             </article>
         <?php endforeach; ?>
     <?php endif; ?>
-
+    </div>
+    
 </section>
 
 <?php get_footer(); ?><?php

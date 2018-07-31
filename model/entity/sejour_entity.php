@@ -25,14 +25,15 @@ function getSejour(int $id): array {
     $query = "SELECT 
                 sejour.*,
                 DATE_FORMAT(sejour.date_creation,'%d/%m/%Y') AS date_creation_format,   
+                destination.libelle AS destination
             FROM sejour
             INNER JOIN destination ON sejour.destination_id = destination.id
-            ORDER BY sejour.date_creation DESC
             WHERE sejour.id = :id;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
+    
     return $stmt->fetch();
 }
 
