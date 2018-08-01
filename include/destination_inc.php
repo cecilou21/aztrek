@@ -2,7 +2,7 @@
 
 <article class="action">
     
-    <a href="destination.php?id=<?php echo $destination["id"]; ?>">
+    <a href="destinations.php?id=<?php echo $destination["id"]; ?>">
         <img src="uploads/<?php echo $destination["image"]; ?>" alt="<?php echo $destination["libelle"]; ?>">
 
         <footer class="overlay">

@@ -8,7 +8,7 @@ $libelle = $_POST["libelle"];
 $image = $_FILES["image"]["name"];
 $tmp = $_FILES["image"]["tmp_name"];
 
-move_uploaded_file($tmp, "../../../images/Pictos/" . $image);
+move_uploaded_file($tmp, "../../../uploads/" . $image);
 
 insertActivite($libelle, $image);
 

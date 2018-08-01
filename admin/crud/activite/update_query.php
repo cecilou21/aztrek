@@ -13,8 +13,9 @@ if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
     $image = $_FILES["image"]["name"];
     $tmp = $_FILES["image"]["tmp_name"];
     
-    move_uploaded_file($tmp, "../../../images/Pictos/" . $image);
+    move_uploaded_file($tmp, "../../../uploads/" . $image);
 }
+
 
 updateActivite($id, $libelle, $image);
 

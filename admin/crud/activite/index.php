@@ -25,7 +25,7 @@ require_once '../../layout/header.php';
         <?php foreach ($list_activites as $activite) : ?>
             <tr>
                 <td><?php echo $activite["libelle"]; ?></td>
-                <td><img src="<?php echo SITE_URL ."/images/Pictos/" . $activite["image"]; ?>" alt="" class="img-thumbnail"></td>
+                <td><img src="<?php echo SITE_URL ."/uploads/" . $activite["image"]; ?>" alt="" class="img-thumbnail"></td>
                 <td class="col-actions">
                     <form action="delete_query.php" method="post" class="form-delete">
                         <input type="hidden" name="id" value="<?php echo $activite["id"]; ?>">

@@ -111,3 +111,25 @@ function getAllSejourByCategorie(int $id): array {
     
 }
 
+function getAllSejourByDestination(int $id): array {
+    /* @var $connexion PDO */
+    global $connexion;
+    
+    $query = "SELECT 
+                sejour.id,
+                sejour.titre,
+                sejour.image,
+                sejour.description 
+            FROM sejour
+            INNER JOIN destination ON destination.id = sejour.destination_id
+            WHERE destination_id = :id
+            GROUP BY sejour.id
+            ORDER BY sejour.date_creation DESC;";
+    
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    return $stmt->fetchAll();
+    
+}
+

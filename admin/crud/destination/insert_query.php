@@ -12,6 +12,6 @@ $tmp = $_FILES["image"]["tmp_name"];
 
 move_uploaded_file($tmp, "../../../uploads/" . $image);
 
-insertDestination($libelle, $description, $image);
+insertDestination($libelle, $image, $description );
 
 header("Location: index.php");

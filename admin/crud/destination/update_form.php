@@ -16,18 +16,18 @@ require_once '../../layout/header.php'; ?>
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Description</label>
-        <div class="col-sm-8">
-            <input type="text" name="description" value="<?php echo $destination["description"]; ?>" class="form-control" placeholder="Description" >
-        </div>
-    </div>
-    <div class="form-group row">
         <label class="col-sm-2 col-form-label">Image</label>
         <div class="col-sm-1">
             <img src="../../../uploads/<?php echo $destination['image']; ?>" class="img-responsive img-thumbnail">
         </div>
         <div class="col-sm-7">
             <input type="file" name="image" accept="images/*" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-8">
+            <input type="text" name="description" value="<?php echo $destination["description"]; ?>" class="form-control" placeholder="Description" >
         </div>
     </div>
     <input type="hidden" name="id" value="<?php echo $id; ?>">

@@ -19,6 +19,7 @@ require_once '../../layout/header.php';
             <th>Libellé</th>
            
             <th>Image</th>
+            <th>Description</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -27,6 +28,7 @@ require_once '../../layout/header.php';
             <tr>
                 <td><?php echo $destination["libelle"]; ?></td>
                 <td><img src="<?php echo SITE_URL ."/uploads/" . $destination["image"]; ?>" alt="" class="img-thumbnail"></td>
+                <td><?php echo $destination["description"]; ?></td>
                 <td class="col-actions">
                     <form action="delete_query.php" method="post" class="form-delete">
                         <input type="hidden" name="id" value="<?php echo $destination["id"]; ?>">

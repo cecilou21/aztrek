@@ -11,15 +11,15 @@ require_once '../../layout/header.php'; ?>
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Description</label>
-        <div class="col-sm-8">
-            <input type="text" name="description" class="form-control" placeholder="Description">
-        </div>
-    </div>
-    <div class="form-group row">
         <label class="col-sm-2 col-form-label">Image</label>
         <div class="col-sm-8">
             <input type="file" name="image" accept="images/*" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-8">
+            <input type="text" name="description" class="form-control" placeholder="Description">
         </div>
     </div>
     <button type="submit" class="btn btn-success float-right">
