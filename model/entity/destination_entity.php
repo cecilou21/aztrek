@@ -32,20 +32,21 @@ function insertDestination(string $libelle, string $image, string $description):
     
 }
 
-function updateDestination(int $id,string $libelle, string $description, string $image) {
+function updateDestination(int $id,string $libelle, string $image, string $description) {
     /* @var $connexion PDO */
     global $connexion;
     
-    $query = "UPDATE destination SET libelle = :libelle, description = :description,  image = :image  WHERE id = :id";
+    $query = "UPDATE destination SET libelle = :libelle, image = :image, description = :description WHERE id = :id";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
     $stmt->bindParam(":libelle", $libelle);
-    $stmt->bindParam(":description", $description);
     $stmt->bindParam(":image", $image);
+    $stmt->bindParam(":description", $description);
     $stmt->execute();
     
     
 }
+
 
 

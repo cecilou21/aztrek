@@ -1,8 +1,10 @@
 <?php
-
 require_once '../../../model/database.php';
 
 $list_sejours = getAllEntities("sejour");
+
+$list_activites = getAllEntities("activite");
+$list_destinations = getAllEntities("destination");
 
 require_once '../../layout/header.php'; ?>
 
@@ -25,7 +27,7 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Description</label>
         <div class="col-sm-8">
-            <textarea name="description"  class="form-control"></textarea>
+            <textarea name="description" class="form-control"></textarea>
     </div>
     </div>
     <div class="form-group row">
@@ -37,13 +39,13 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Date de création</label>
         <div class="col-sm-8">
-            <input type="date" name="date_fin" class="form-control">
+            <input type="date" name="date_creation" class="form-control">
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Question</label>
         <div class="col-sm-8">
-            <textarea name="question"  class="form-control"></textarea>
+            <textarea name="question" class="form-control"></textarea>
         </div>
     </div>
     <div class="form-group row">
@@ -77,7 +79,7 @@ require_once '../../layout/header.php'; ?>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Activité</label>
         <div class="col-sm-8">
-            <select name="activite" class="form-control">
+            <select name="activite_id" class="form-control">
                 <?php foreach ($list_activites as $activite) : ?>
                 <option value="<?php echo $activite["id"]; ?>">
                         <?php echo $activite["libelle"]; ?>
@@ -93,5 +95,5 @@ require_once '../../layout/header.php'; ?>
     </button>
     
 </form>
-<?php require_once 'depart/index.php'; ?>
+
 <?php require_once '../../layout/footer.php'; ?>
