@@ -36,11 +36,11 @@ function getSejour(int $id): array {
     return $stmt->fetch();
 }
 
-function insertSejour(string $titre, string $image, string $description, int $nb_jours, string $date_creation, string $question, string $reponse, string $destination_id, string $activite_id): int {
+function insertSejour(string $titre, string $image, string $description, int $nb_jours, string $date_creation, string $question, string $reponse, string $destination_id): int {
     /* @var $connexion PDO */
     global $connexion;
 
-    $query = "INSERT INTO sejour (titre, image, description, nb_jours, date_creation, question, reponse, destination_id, activite_id) VALUES (:titre, :image, :description, :nb_jours, :date_creation, :question, :reponse, :destination_id, :activite_id)";
+    $query = "INSERT INTO sejour (titre, image, description, nb_jours, date_creation, question, reponse, destination_id) VALUES (:titre, :image, :description, :nb_jours, :date_creation, :question, :reponse, :destination_id)";
 
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":titre", $titre);
@@ -51,10 +51,22 @@ function insertSejour(string $titre, string $image, string $description, int $nb
     $stmt->bindParam(":question", $question);
     $stmt->bindParam(":reponse", $reponse);
     $stmt->bindParam(":destination_id", $destination_id);
-    $stmt->bindParam(":activite_id", $activite_id);
     $stmt->execute();
 
     return $connexion->lastInsertId();
+}
+
+function addActiviteToSejour(int $sejour_id, int $activite_id){
+    /* @var $connexion PDO */
+    global $connexion;
+
+    $query = "INSERT INTO sejour_has_activite (sejour_id, activite_id) VALUES (:sejour_id, :activite_id)";
+
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":sejour_id", $sejour_id);
+    $stmt->bindParam(":activite_id", $activite_id);
+    $stmt->execute();
+
 }
 
 function updateSejour(int $id, string $titre, string $image, string $description, int $nb_jours, string $question, string $reponse, string $destination_id): int {

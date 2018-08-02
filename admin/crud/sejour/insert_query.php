@@ -20,7 +20,9 @@ $tmp = $_FILES["image"]["tmp_name"];
 move_uploaded_file($tmp, "../../../uploads/" . $image);
 
 //enregistrement de la base de données
-insertSejour($titre, $image, $description, $nb_jours, $date_creation, $question, $reponse, $destination, $activite_id);
+$sejour_id = insertSejour($titre, $image, $description, $nb_jours, $date_creation, $question, $reponse, $destination);
+
+addActiviteToSejour($sejour_id, $activite_id);
 
 //redirection vers la liste
 header("Location: index.php");

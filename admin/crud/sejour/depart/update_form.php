@@ -3,6 +3,7 @@ require_once '../../../../model/database.php';
 require_once '../../../../lib/functions.php';
 
 $id = $_GET["id"];
+$sejour_id = $_GET["sejour_id"];
 $depart = getOneEntity("depart", $id);
 
 $list_departs = getAllEntities("activite");
@@ -33,6 +34,7 @@ require_once '../../../layout/header.php'; ?>
     </div>
     
     <input type="hidden" name="id" value="<?php echo $id; ?>">
+    <input type="hidden" name="sejour_id" value="<?php echo $sejour_id; ?>">
     <button type="submit" class="btn btn-success float-right">
         <i class="fa fa-save"></i>
         Enregistrer

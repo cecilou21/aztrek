@@ -37,7 +37,7 @@ $list_departs = getAllDepartBySejour($id);
                             <i class="fa fa-trash"></i>
                         </button>
                     </form>
-                    <a href="depart/update_form.php?id=<?php echo $depart["id"]; ?>" class="btn btn-warning">
+                    <a href="depart/update_form.php?id=<?php echo $depart["id"]; ?>&sejour_id=<?php echo $id; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                     </a>
                 </td>
